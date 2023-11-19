@@ -6,6 +6,8 @@ const TodoForm = ({ handleSubmit, todo, setTodo, todos }: Form) => {
       <form onSubmit={handleSubmit}>
         <div>
           <input
+            required
+            minLength={3}
             type="text"
             className="bg-gray-800 px-2 py-1 w-72 rounded-md outline-none focus:outline-[#2e5897]"
             placeholder="Add Task"
@@ -21,8 +23,7 @@ const TodoForm = ({ handleSubmit, todo, setTodo, todos }: Form) => {
         </div>
         <div>
           <select
-            name=""
-            id=""
+            required
             className={`bg-gray-800 px-2 py-1 w-72 mt-3 outline-none rounded-md focus:outline-[#2e5897]  ${
               !todo.category && "text-gray-400"
             }`}
