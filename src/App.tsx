@@ -67,6 +67,7 @@ function App() {
     const check = todos.find((todo) => todo.id === id);
     if (check) check.clicked = !check.clicked;
     setTodos([...todos]);
+    localStorage.setItem("myTodo", JSON.stringify([...todos]));
   };
 
   const handleCategory = (e: ChangeEvent<HTMLSelectElement>) => {
